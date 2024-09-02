@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script displays all active IPv4 IP addresses on the machine using ifconfig and awk
 # Extract active IPv4 IP addresses using ifconfig and awk
-netstat -tn 2>/dev/null | grep :80 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr | head
+ifconfig | grep 'inet ' | awk '{print $2}'
