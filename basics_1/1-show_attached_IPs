@@ -2,4 +2,4 @@
 # This script displays all active IPv4 IP addresses on the machine using ifconfig and awk.
 
 # Extract active IPv4 IP addresses using ifconfig and awk
-ip -4 -o addr show | awk '{print $4}' | cut -d/ -f1 | grep -v "127.0.0.1"
+ip -4 -o addr show | awk '{print $4}' | cut -d/ -f1 | grep -v "127.0.0.1" | sed 's/$/$/'
